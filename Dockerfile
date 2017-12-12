@@ -4,11 +4,11 @@ ENV EPICS_REPO inj-efficiency-epics-ioc
 
 ENV BOOT_DIR iocInjEfficiency
 
-ENV COMMIT a825b1bd7af80fa5a8550af26d9c2b582296d220
+ENV BRANCH master
 
 RUN git clone https://github.com/lnls-dig/${EPICS_REPO}.git /opt/epics/${EPICS_REPO} && \
     cd /opt/epics/${EPICS_REPO} && \
-    git checkout ${COMMIT} && \
+    git checkout ${BRANCH} && \
     sed -i -e 's|^EPICS_BASE=.*$|EPICS_BASE=/opt/epics/base|' configure/RELEASE && \
     sed -i -e 's|^SUPPORT=.*$|SUPPORT=/opt/epics/synApps_5_8/support|' configure/RELEASE && \
     make && \
