@@ -4,7 +4,7 @@ ENV EPICS_REPO inj-efficiency-epics-ioc
 
 ENV BOOT_DIR iocInjEfficiency
 
-ENV COMMIT 31302c8babe3160387a0b9d4ae6ce52b4ea41ef2
+ENV COMMIT ef61ffd53fec119402c28af9283908f9535406cf
 
 RUN git clone https://github.com/lnls-dig/${EPICS_REPO}.git /opt/epics/${EPICS_REPO} && \
     cd /opt/epics/${EPICS_REPO} && \
