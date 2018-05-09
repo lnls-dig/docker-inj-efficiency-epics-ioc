@@ -19,6 +19,6 @@ RUN git clone https://github.com/lnls-dig/${EPICS_REPO}.git /opt/epics/${EPICS_R
 # where to put system-wide env-vars on docker-debian
 RUN . /root/.bashrc
 
-WORKDIR /opt/epics/startup/ioc/${EPICS_REPO}/iocBoot/${BOOT_DIR} 
+WORKDIR /opt/epics/startup/ioc/${EPICS_REPO}/iocBoot/${BOOT_DIR}
 
 ENTRYPOINT ["./runProcServ.sh"]
