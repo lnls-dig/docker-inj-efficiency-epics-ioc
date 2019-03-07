@@ -1,14 +1,14 @@
-FROM lnls/epics-dist:base-3.15-debian-9
+FROM lnls/epics-dist:base-3.15-synapps-lnls-R1-0-0-debian-9.5
 
 ENV EPICS_REPO inj-efficiency-epics-ioc
 ENV BOOT_DIR iocInjEfficiency
-ENV COMMIT v1.0.1
+ENV COMMIT v1.1.0
 
 RUN git clone https://github.com/lnls-dig/${EPICS_REPO}.git /opt/epics/${EPICS_REPO} && \
     cd /opt/epics/${EPICS_REPO} && \
     git checkout ${COMMIT} && \
     echo 'EPICS_BASE=/opt/epics/base' > configure/RELEASE.local && \
-    echo 'SUPPORT=/opt/epics/synApps-lnls-R0-0-2/support' >> configure/RELEASE.local && \
+    echo 'SUPPORT=/opt/epics/synApps-lnls-R1-0-0/support' >> configure/RELEASE.local && \
     echo 'SNCSEQ=$(SUPPORT)/seq-2-2-6' >> configure/RELEASE.local && \
     echo 'CALC=$(SUPPORT)/calc-R3-7' >> configure/RELEASE.local && \
     echo 'ASYN=$(SUPPORT)/asyn-R4-33' >> configure/RELEASE.local && \
